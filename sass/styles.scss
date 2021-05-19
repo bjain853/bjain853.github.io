@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap');
+
+$primary-text-color: #ffca28;
+$secondary-text-color: chartreuse;
+$bg-color: #23262e;
+$cursor-color: #ee5d43;
+$skill-bar-color: #00e8c6;
+$font-stack: 'Fira Code', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+	sans-serif;
+
+nav {
+	ul {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		list-style-type: none;
+		li {
+			margin: 1.5rem;
+			cursor: pointer;
+		}
+	}
+    width:70%;
+}
+
+body {
+	font-family: $font-stack;
+	background-color: $bg-color;
+	color: $primary-text-color;
+	line-height: 1.5;
+}
+
+main {
+    width: 80%;
+	h1 {
+		color: #c74ded;
+		margin-bottom: 4rem;
+	}
+    h2{
+        color:$secondary-text-color;
+    }
+    .main-content{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.container {
+	max-width: 900px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.cursor {
+	color: $cursor-color;
+}
+
+.skill-item{
+
+    .skill-bar{
+        height:24px;
+        background-color:$skill-bar-color;
+    }
+    margin-bottom: 20px;
+}
+
+#framework-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    /* This will result on two rows, each one of 300px */
+    grid-template-rows: 100px 100px 100px;
+}
+.skill-image{
+    background-size: cover;
+    height:80px;
+    width:80px;
+    border: none;
+
+}
+
+
+#react{
+    background-image: url("../media/react.svg");
+}
+
+#nextjs{
+    background-image: url("../media/nextjs.png");
+}
+#gatsby{
+    background-image: url("../media/gatsby.svg");
+}
+#nodejs{
+    background-image: url("../media/nodejs.png");
+}
+
+
+#numpy{
+    background-image: url("../media/numpy.png");
+}
+#material-ui{
+    background-image: url("../media/material-ui.png");
+}
+
+#bootstrap{
+    background-image: url("../media/bootstrap.svg");
+}
+#express{
+    background-image: url("../media/expressjs.jpg");
+}
+
+#linux{
+    background-image: url("../media/linux.png");
+}
+
+#graphql{
+    background-image: url("../media/graphql.png");
+}
+
+#mysql{
+    background-image: url("../media/mysql.png");
+}
+
+#git{
+    background-image: url("../media/git.png");
+}
+
+#docker{
+    background-image: url("../media/expressjs.jpg");
+}
+
+#rest{
+    background-image: url("../media/rest.png");
+}
+
+#mongodb{
+    background-image: url("../media/MongoDB.svg");
+}
+#postgres{
+    background-image: url("../media/postgres.png");
+}
+
+
+
+
+// #react{
+//     background-image: url("../media/react.svg");
+// }
+
