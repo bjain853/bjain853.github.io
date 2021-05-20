@@ -54,7 +54,18 @@ $font-stack: 'Fira Code', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
 	@return var(--color-#{$color-name});
 }
 
+
+footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 2.5rem;  
+}
+
 nav {
+	position:absolute;
+	top:0;
+	width: 70%;
 	ul {
 		display: flex;
 		align-items: center;
@@ -65,7 +76,7 @@ nav {
 			cursor: pointer;
 		}
 	}
-	width: 70%;
+
 }
 
 body {
@@ -76,10 +87,11 @@ body {
 }
 
 main {
-	width: 80%;
+	width: 60%;
+	padding-top: 5rem;
 	h1 {
 		color: getColor(user);
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 		word-spacing: -2px;
 	}
 	h2 {
@@ -98,6 +110,9 @@ main {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	position: relative;
+	min-height: 100vh;
+	padding-bottom: 2.5rem;  
 }
 
 //underline code from
@@ -203,7 +218,7 @@ main {
 	background-image: url("../public/media/bootstrap.svg");
 }
 #express {
-	background-image: url("../public/media/express.svg");
+	background-image: url("../public/media/expressjs.jpg");
 }
 
 #linux {
@@ -250,9 +265,11 @@ main {
 #word {
 	background-image: url("../public/media/word.svg");
 }
+
 #powerpoint{
 	background-image: url("../public/media/powerpoint.svg");
 }
+
 #projects-contents {
 	display: grid;
 	max-width: 1200px;
@@ -316,6 +333,3 @@ main {
 	}
 }
 
-// #react{
-//     background-image: url("../public/media/react.svg");
-// }
