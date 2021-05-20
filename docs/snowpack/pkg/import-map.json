@@ -1,5 +1,0 @@
-{
-  "imports": {
-    "typewriter-effect/dist/core": "./typewriter-effect/dist/core.js"
-  }
-}
