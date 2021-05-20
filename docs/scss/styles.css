@@ -31,7 +31,16 @@
     --theme: "dark";
   }
 }
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
 nav {
+  position: absolute;
+  top: 0;
   width: 70%;
 }
 nav ul {
@@ -53,11 +62,12 @@ body {
 }
 
 main {
-  width: 80%;
+  width: 60%;
+  padding-top: 5rem;
 }
 main h1 {
   color: var(--color-user);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   word-spacing: -2px;
 }
 main h2 {
@@ -75,6 +85,9 @@ main .main-content {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 2.5rem;
 }
 
 .underline:hover {
@@ -179,7 +192,7 @@ main .main-content {
 }
 
 #express {
-  background-image: url("../public/media/express.svg");
+  background-image: url("../public/media/expressjs.jpg");
 }
 
 #linux {

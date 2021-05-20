@@ -29,8 +29,10 @@ window.onload = function() {
 
 	home.addEventListener('click',function(){
 		TypeString('Welcome');
-		mainContent.innerHTML=`   <h2>Introduction</h2>
-		<p> A tech enthusiast with a passion for software development </p>`;
+		mainContent.innerHTML=`       <h2>Introduction</h2>
+		<p> 
+			Hello! My name is Bhavya and I am a Toronto based Software Developer. I am currently pursuing a Bachelors in Computer Science from University of Toronto
+	   </p>`;
 	});
 
 	about.addEventListener('click', function() {
@@ -118,30 +120,31 @@ window.onload = function() {
 	
 			mainContent.innerHTML = `
 			<div id="contact-info">
+			<h2> Feel free to reach me at </h2>
 			<ul>
 				<li>
 				<div id="email">
-				<h2>Email </h2>
+				<h3>Email </h3>
 				<span><a href="mailto:bhavya.jain@mail.utoronto.ca">bhavya.jain@mail.utoronto.ca</a></span>
 				</div>
 				</li>
 			
 				<li>
 				<div id="linkedin">
-				<h2> Linkedin  </h2>
+				<h3> Linkedin  </h3>
 				<span><a href="https://linkedin.com/in/bhavyaj99">bhavyaj99</a></span>
 				</div>
 				</li>
 
 				<li>
 				<div id="github">
-				<h2>Github  </h2>
+				<h3>Github  </h3>
 				<span><a href="https://github.com/bjain853">bjain853</a></span>
 				</div>
 				</li>
 				<li>
 				<div id="phone">
-				<h2>Phone  </h2>
+				<h3>Phone  </h3>
 				<span> (437) 981-0687 </span>
 				</div>
 				</li>
