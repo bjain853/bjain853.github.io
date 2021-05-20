@@ -3,15 +3,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap');
 
-$primary-text-color: #ffca28;
-$secondary-text-color: chartreuse;
-$bg-color: #23262e;
-$cursor-color: #ee5d43;
-$skill-bar-color: #8fd46d;
-$selected-text-color: #00e8c6;
-$color-links: #f0266f;
+
+// prefers-color-scheme code from https://www.youtube.com/watch?v=OMaw2VYVZs4&list=TLPQMjAwNTIwMjFNcfOCGmikIg&index=7
+
+$colors-dark: (
+	base:#002b36,
+	text:#839496,
+	secondary-text:#93a1a1,
+	user:#6c71c4,
+	cursorColor:#839496,
+	skill-bar:#2aa198,
+	selected-text:#93a1a1,
+	links:#005bbb
+);
+
+$colors: (
+	base:#fdf6e3,
+	text:#657b83,
+	user:#6c71c4,
+	secondary-text:#aaa8a2,
+	cursorColor:#657b83,
+	skill-bar:#002b36,
+	selected-text:#586e75,
+	links:#005bbb,
+);
+
 $font-stack: 'Fira Code', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
 	sans-serif;
+
+:root {
+
+	@each $name, $color in $colors {
+		--color-#{$name}: #{$color};
+	}
+	--theme: 'light';
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        @each $name, $color in $colors-dark{
+            --color-#{$name} : #{$color};
+        }
+    --theme : 'dark';
+    }
+}
+
+@function getColor($color-name) {
+	@return var(--color-#{$color-name});
+}
 
 nav {
 	ul {
@@ -29,20 +68,20 @@ nav {
 
 body {
 	font-family: $font-stack;
-	background-color: $bg-color;
-	color: $primary-text-color;
+	background-color: getColor(base);
+	color: getColor(text);
 	line-height: 1.5;
 }
 
 main {
 	width: 80%;
 	h1 {
-		color: #c74ded;
+		color: getColor(user);
 		margin-bottom: 2rem;
 		word-spacing: -2px;
 	}
 	h2 {
-		color: $secondary-text-color;
+		color: getColor(secondary-text);
 	}
 	.main-content {
 		display: flex;
@@ -63,7 +102,7 @@ main {
 // https://tiffanywhite.dev/2019/12/02/a-simple-terminal-website-with-css-and-typewriterjs/
 
 .underline:hover {
-	color: $selected-text-color;
+	color: getColor(selected-text);
 }
 
 .underline {
@@ -77,7 +116,7 @@ main {
 	left: 0;
 	right: 0;
 	height: 2px;
-	background-color: $selected-text-color;
+	background-color: getColor(selected-text);
 	transform-origin: bottom right;
 	transform: scaleX(0);
 	transition: transform 0.5s ease;
@@ -89,7 +128,7 @@ main {
 }
 
 .cursor {
-	color: $cursor-color;
+	color: getColors(cursorColor);
 }
 
 #contact-info {
@@ -99,7 +138,7 @@ main {
 	}
 	a {
 		text-decoration: none;
-		color: $color-links;
+		color: getColor(links);
 	}
 
 	#phone,
@@ -112,7 +151,7 @@ main {
 .skill-item {
 	.skill-bar {
 		height: 24px;
-		background-color: $skill-bar-color;
+		background-color: getColor(skill-bar);
 	}
 	margin-bottom: 20px;
 }
@@ -136,7 +175,7 @@ main {
 }
 
 #nextjs {
-	background-image: url("../public/media/nextjs.png");
+	background-image: url("../public/media/nextjs.svg");
 }
 #gatsby {
 	background-image: url("../public/media/gatsby.svg");
@@ -149,7 +188,7 @@ main {
 	background-image: url("../public/media/numpy.png");
 }
 #material-ui {
-	background-image: url("../public/media/material-ui.png");
+	background-image: url("../public/media/material-ui.svg");
 }
 
 #bootstrap {
@@ -176,7 +215,7 @@ main {
 }
 
 #docker {
-	background-image: url("../public/media/expressjs.jpg");
+	background-image: url("../public/media/docker.svg");
 }
 
 #rest {
@@ -265,7 +304,7 @@ main {
 	word-wrap: normal;
 	a {
 		text-decoration: none;
-		color: $color-links;
+		color: getColor(links);
 	}
 }
 
