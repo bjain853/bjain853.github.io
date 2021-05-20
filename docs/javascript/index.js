@@ -51,7 +51,7 @@ window.onload = function() {
 		});
 		Technologies.forEach(function(tech){
 			technologyHTML+=`
-			<img border=0 id="${tech}" class="skill-image"/>
+			<img border=0 loading="lazy" id="${tech}" class="skill-image"/>
 			`;
 		});
 
@@ -71,7 +71,7 @@ window.onload = function() {
 	resume.addEventListener('click', function() {
 		TypeString('Resume');
 		mainContent.innerHTML=`
-			<iframe src="../public/files/Resume.pdf" width="100%" style="height: 100vh;" />
+			<iframe src="../public/files/Resume.pdf"  loading="lazy" width="100%" style="height: 100vh;" />
 		`
 	});
 
@@ -145,7 +145,7 @@ window.onload = function() {
 				<li>
 				<div id="phone">
 				<h3>Phone  </h3>
-				<span> (437) 981-0687 </span>
+				<span> <a href="tel:437-981-0687">(437) 981-0687</a> </span>
 				</div>
 				</li>
 			</ul>
