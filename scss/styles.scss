@@ -152,6 +152,7 @@ main {
 	li {
 		list-style: none;
 		margin-bottom: 20px;
+		font-size: large;
 		div {
 			display: flex;
 			flex-direction: column;
@@ -180,7 +181,15 @@ main {
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	/* This will result on two rows, each one of 300px */
 	grid-template-rows: 100px 100px 100px;
-	grid-gap: 1rem;
+
+	@media only screen and (max-width:768px) {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	/* This will result on two rows, each one of 300px */
+	grid-template-rows: 100px 100px 100px 100px;	
+	}
+
+	row-gap: 0.1rem;
+	column-gap:0.5rem;
 }
 .skill-image {
 	background-size: contain;
@@ -272,7 +281,7 @@ main {
 
 #projects-contents {
 	display: grid;
-	max-width: 1200px;
+	width: 100%;
 	margin: 0 auto;
 	display: grid;
 	grid-gap: 1rem;
@@ -294,7 +303,10 @@ main {
 	display: flex;
 	height: 200px;
 	background-color: getColor(card-base);
-	width:90%
+	width:90%;
+	@media only screen and (max-width:768px) {
+		flex-direction: column;
+	}
 }
 
 .project-detail-container {
