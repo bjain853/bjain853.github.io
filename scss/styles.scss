@@ -294,14 +294,14 @@ main {
 	display: flex;
 	height: 200px;
 	background-color: getColor(card-base);
+	width:90%
 }
 
 .project-detail-container {
 	display: flex;
 	flex-direction: column;
 	padding: 2%;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	overflow: scroll;
 }
 
 .tech-stack {
