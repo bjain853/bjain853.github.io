@@ -3,15 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap');
 
-
 // prefers-color-scheme code from https://www.youtube.com/watch?v=OMaw2VYVZs4&list=TLPQMjAwNTIwMjFNcfOCGmikIg&index=7
 
 $colors-dark: (
 	base:#002b36,
+	card-base:#507786,
 	text:#839496,
-	secondary-text:#93a1a1,
+	secondary-text:#b9c7c7,
 	user:#6c71c4,
-	cursorColor:#839496,
+	cursorColor:#d33682,
 	skill-bar:#2aa198,
 	selected-text:#93a1a1,
 	links:#005bbb
@@ -19,33 +19,33 @@ $colors-dark: (
 
 $colors: (
 	base:#fdf6e3,
+	card-base:#d8d8c1af,
 	text:#657b83,
 	user:#6c71c4,
-	secondary-text:#aaa8a2,
-	cursorColor:#657b83,
+	secondary-text:#72716e,
+	cursorColor:#d33682,
 	skill-bar:#002b36,
 	selected-text:#586e75,
-	links:#005bbb,
+	links:#005bbb
 );
 
 $font-stack: 'Fira Code', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
 	sans-serif;
 
 :root {
-
 	@each $name, $color in $colors {
 		--color-#{$name}: #{$color};
 	}
 	--theme: 'light';
 }
 
-@media(prefers-color-scheme: dark) {
-    :root {
-        @each $name, $color in $colors-dark{
-            --color-#{$name} : #{$color};
-        }
-    --theme : 'dark';
-    }
+@media (prefers-color-scheme: dark) {
+	:root {
+		@each $name, $color in $colors-dark {
+			--color-#{$name}: #{$color};
+		}
+		--theme: 'dark';
+	}
 }
 
 @function getColor($color-name) {
@@ -127,24 +127,22 @@ main {
 	transform: scaleX(1);
 }
 
-.cursor {
-	color: getColors(cursorColor);
+#page-title {
+	color: getColor(cursorColor);
 }
 
 #contact-info {
 	li {
 		list-style: none;
 		margin-bottom: 20px;
+		div {
+			display: flex;
+			flex-direction: column;
+		}
 	}
 	a {
 		text-decoration: none;
 		color: getColor(links);
-	}
-
-	#phone,
-	#email {
-		display: flex;
-		flex-direction: column;
 	}
 }
 
@@ -265,13 +263,11 @@ main {
 .project-card {
 	padding: 1rem;
 	display: flex;
-	flex-direction: column;
-	padding: 1rem;
 	height: 200px;
-	background-color: #a9a9a9;
+	background-color: getColor(card-base);
 }
 
-.image-detail-container {
+.project-detail-container {
 	display: flex;
 	flex-direction: column;
 	padding: 2%;
@@ -291,7 +287,7 @@ main {
 
 .project-summary {
 	font-weight: bold;
-	color: black;
+	color: getColor(text);
 	font-size: medium;
 	margin-left: auto;
 	margin-top: 0.5em;

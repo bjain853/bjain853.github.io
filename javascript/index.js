@@ -1,4 +1,8 @@
 import Typewriter from 'typewriter-effect/dist/core';
+import Projects from './projects';
+import Languages from './languages';
+import Technologies from './technologies';
+
 import '../scss/styles.scss';
 
 window.onload = function() {
@@ -10,77 +14,7 @@ window.onload = function() {
 
 	const mainContent = document.querySelector('#content');
 
-	const Projects =[
-		{
-			name:"Proflix",
-			summary:"A streaming platform built for ease of use and user privacy",
-			link:"https://github.com/bjain853/Proflix",
-			img:"",
-			techStack:[]
-		},
-		{
-			name:"Code Collab",
-			summary:"A collaborative cloud-based code editor capable of real time editing and sharing",
-			img:"",
-			link:"https://github.com/bjain853/codecollab",
-			techStack:[]
-		},
-		{
-			name:"Web Gallery",
-			summary:"A secure image respository where users can see other user's posts and comment on those too",
-			img:"",
-			link:"https://github.com/bjain853/webgallery",
-			techStack:[]
-		},
-		{
-			name:"Microblog",
-			summary:"A blog where people can comment and like and/or dislike other user's posts",
-			img:"",
-			link:"https://github.com/bjain853/microblog",
-			techStack:[]
-		},
-		{
-			name:"UImpactify MVP",
-			summary:"A MVP for an Ed-tech UImpactify",
-			link:"",
-			img:"",
-			techStack:[]
-		},
-	];
-
-	const Languages = [
-		{ lang: 'C', prof: '90%' },
-		{ lang: 'C++', prof: '60%' },
-		{ lang: 'Java', prof: '80%' },
-		{ lang: 'Python', prof: '75%' },
-		{ lang: 'JavaScript', prof: '90%' },
-		{ lang: 'TypeScript', prof: '60%' },
-		{ lang: 'CSS3', prof: '85%' },
-		{ lang: 'HTML5', prof: '90%' }
-	];
-
-	const Technologies = [
-		'react',
-		'nextjs',
-		'gatsby',
-		'nodejs',
-		'express',
-		'numpy',
-		'material-ui',
-		'bootstrap',
-		'mysql',
-		'linux',
-		'git',
-		'postgres',
-		'docker',
-		'rest',
-		'graphql',
-		'mongodb',
-		'springboot',
-		'android',
-		'excel',
-		'word'
-	];
+	
 
 	function TypeString(stringToType) {
 		const typewriter = new Typewriter('#page-title', {
@@ -146,10 +80,13 @@ window.onload = function() {
 				techStackHTML +=` ${tech} `;
 			});
 
-			projectHTML+=`<div class="project-card">
-			<div class="project-container">
-			  <img class="posted-image" alt="No Image Available" src="${project.img}"/>
-			</div>
+			projectHTML+=`
+			<div class="project-card">
+
+			<video autoplay loop muted playsinline width="80%" height="80%" >
+			<source src="${project.vid}" type="video/mp4">
+			</video>
+
 			<div class="project-detail-container">
 				<span class="project-title">
 				<a href="${project.link}">
@@ -185,11 +122,24 @@ window.onload = function() {
 				<span><a href="mailto:bhavya.jain@mail.utoronto.ca">bhavya.jain@mail.utoronto.ca</a></span>
 				</div>
 				</li>
-	
+			
+				<li>
+				<div id="linkedin">
+				<h2> Linkedin  </h2>
+				<span><a href="https://linkedin.com/in/bhavyaj99">bhavyaj99</a></span>
+				</div>
+				</li>
+
+				<li>
+				<div id="github">
+				<h2>Github  </h2>
+				<span><a href="https://github.com/bjain853">bjain853</a></span>
+				</div>
+				</li>
 				<li>
 				<div id="phone">
 				<h2>Phone  </h2>
-				<span> 437-981-0687 </span>
+				<span> (437) 981-0687 </span>
 				</div>
 				</li>
 			</ul>
