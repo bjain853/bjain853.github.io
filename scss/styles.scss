@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap');
+
+$primary-text-color: #ffca28;
+$secondary-text-color: chartreuse;
+$bg-color: #23262e;
+$cursor-color: #ee5d43;
+$skill-bar-color: #8fd46d;
+$selected-text-color: #00e8c6;
+$color-links: #f0266f;
+$font-stack: 'Fira Code', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+	sans-serif;
+
+nav {
+	ul {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		list-style-type: none;
+		li {
+			margin: 1.5rem;
+			cursor: pointer;
+		}
+	}
+	width: 70%;
+}
+
+body {
+	font-family: $font-stack;
+	background-color: $bg-color;
+	color: $primary-text-color;
+	line-height: 1.5;
+}
+
+main {
+	width: 80%;
+	h1 {
+		color: #c74ded;
+		margin-bottom: 2rem;
+		word-spacing: -2px;
+	}
+	h2 {
+		color: $secondary-text-color;
+	}
+	.main-content {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.container {
+	max-width: 900px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+//underline code from
+// https://tiffanywhite.dev/2019/12/02/a-simple-terminal-website-with-css-and-typewriterjs/
+
+.underline:hover {
+	color: $selected-text-color;
+}
+
+.underline {
+	position: relative;
+}
+
+.underline::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background-color: $selected-text-color;
+	transform-origin: bottom right;
+	transform: scaleX(0);
+	transition: transform 0.5s ease;
+}
+
+.underline:hover::before {
+	transform-origin: bottom left;
+	transform: scaleX(1);
+}
+
+.cursor {
+	color: $cursor-color;
+}
+
+#contact-info {
+	li {
+		list-style: none;
+		margin-bottom: 20px;
+	}
+	a {
+		text-decoration: none;
+		color: $color-links;
+	}
+
+	#phone,
+	#email {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.skill-item {
+	.skill-bar {
+		height: 24px;
+		background-color: $skill-bar-color;
+	}
+	margin-bottom: 20px;
+}
+
+#framework-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	/* This will result on two rows, each one of 300px */
+	grid-template-rows: 100px 100px 100px;
+	grid-gap: 1rem;
+}
+.skill-image {
+	background-size: cover;
+	height: 80px;
+	width: 80px;
+	border: none;
+}
+
+#react {
+	background-image: url("../public/media/react.svg");
+}
+
+#nextjs {
+	background-image: url("../public/media/nextjs.png");
+}
+#gatsby {
+	background-image: url("../public/media/gatsby.svg");
+}
+#nodejs {
+	background-image: url("../public/media/nodejs.png");
+}
+
+#numpy {
+	background-image: url("../public/media/numpy.png");
+}
+#material-ui {
+	background-image: url("../public/media/material-ui.png");
+}
+
+#bootstrap {
+	background-image: url("../public/media/bootstrap.svg");
+}
+#express {
+	background-image: url("../public/media/expressjs.jpg");
+}
+
+#linux {
+	background-image: url("../public/media/linux.png");
+}
+
+#graphql {
+	background-image: url("../public/media/graphql.png");
+}
+
+#mysql {
+	background-image: url("../public/media/mysql.png");
+}
+
+#git {
+	background-image: url("../public/media/git.png");
+}
+
+#docker {
+	background-image: url("../public/media/expressjs.jpg");
+}
+
+#rest {
+	background-image: url("../public/media/rest.png");
+}
+
+#mongodb {
+	background-image: url("../public/media/MongoDB.svg");
+}
+#postgres {
+	background-image: url("../public/media/postgres.png");
+}
+
+#springboot {
+	background-image: url("../public/media/springboot.png");
+}
+#android {
+	background-image: url("../public/media/android.png");
+}
+
+#excel {
+	background-image: url("../public/media/excel.jpg");
+}
+#word {
+	background-image: url("../public/media/word.jpg");
+}
+
+#projects-contents {
+	display: grid;
+	max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	grid-gap: 1rem;
+	@media (min-width: 600px) {
+		.cards {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	@media (min-width: 900px) {
+		.cards {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	margin-bottom: 25px;
+}
+
+.project-card {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	height: 200px;
+	background-color: #a9a9a9;
+}
+
+.image-detail-container {
+	display: flex;
+	flex-direction: column;
+	padding: 2%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.tech-stack {
+	font-size: 2rem;
+	font-weight: 800;
+	text-decoration: underline;
+	margin-top: 1rem;
+	word-break: break-all;
+	margin-right: auto;
+	margin-bottom: 1em;
+}
+
+.project-summary {
+	font-weight: bold;
+	color: black;
+	font-size: medium;
+	margin-left: auto;
+	margin-top: 0.5em;
+}
+
+.project-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin-right: auto;
+	word-wrap: normal;
+	a {
+		text-decoration: none;
+		color: $color-links;
+	}
+}
+
+// #react{
+//     background-image: url("../public/media/react.svg");
+// }

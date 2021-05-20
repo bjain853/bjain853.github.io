@@ -28,7 +28,7 @@ main {
 }
 main h1 {
   color: #c74ded;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 main h2 {
   color: chartreuse;
@@ -51,6 +51,19 @@ main .main-content {
   color: #ee5d43;
 }
 
+#contact-info li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+#contact-info a {
+  text-decoration: none;
+  color: #f0266f;
+}
+#contact-info #phone, #contact-info #email {
+  display: flex;
+  flex-direction: column;
+}
+
 .skill-item {
   margin-bottom: 20px;
 }
@@ -64,6 +77,7 @@ main .main-content {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   /* This will result on two rows, each one of 300px */
   grid-template-rows: 100px 100px 100px;
+  grid-gap: 1rem;
 }
 
 .skill-image {
@@ -135,6 +149,22 @@ main .main-content {
 
 #postgres {
   background-image: url("../media/postgres.png");
+}
+
+#springboot {
+  background-image: url("../media/springboot.png");
+}
+
+#android {
+  background-image: url("../media/android.png");
+}
+
+#excel {
+  background-image: url("../media/excel.jpg");
+}
+
+#word {
+  background-image: url("../media/word.jpg");
 }
 
 /*# sourceMappingURL=styles.css.map */
