@@ -7,23 +7,25 @@
 
 $colors-dark: (
 	base:#002b36,
-	card-base:#507786,
+	card-base:#6b96a7,
+	card-text:white,
 	text:#839496,
 	secondary-text:#b9c7c7,
 	user:#6c71c4,
 	cursorColor:#d33682,
 	skill-bar:#2aa198,
 	selected-text:#93a1a1,
-	links:#005bbb
+	links:#c04c44
 );
 
 $colors: (
 	base:#fdf6e3,
 	card-base:#d8d8c1af,
+	card-text:black,
 	text:#657b83,
 	user:#6c71c4,
 	secondary-text:#72716e,
-	cursorColor:#d33682,
+	cursorColor:#23918c,
 	skill-bar:#002b36,
 	selected-text:#586e75,
 	links:#005bbb
@@ -147,6 +149,10 @@ main {
 }
 
 .skill-item {
+	.language{
+		font-weight: 600;
+
+	}
 	.skill-bar {
 		height: 24px;
 		background-color: getColor(skill-bar);
@@ -162,10 +168,14 @@ main {
 	grid-gap: 1rem;
 }
 .skill-image {
-	background-size: cover;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 	height: 80px;
 	width: 80px;
-	border: none;
+	border:0; 
+	text-decoration:none; 
+	outline:none;
 }
 
 #react {
@@ -179,7 +189,7 @@ main {
 	background-image: url("../public/media/gatsby.svg");
 }
 #nodejs {
-	background-image: url("../public/media/nodejs.png");
+	background-image: url("../public/media/nodejs.svg");
 }
 
 #numpy {
@@ -193,23 +203,23 @@ main {
 	background-image: url("../public/media/bootstrap.svg");
 }
 #express {
-	background-image: url("../public/media/expressjs.jpg");
+	background-image: url("../public/media/express.svg");
 }
 
 #linux {
-	background-image: url("../public/media/linux.png");
+	background-image: url("../public/media/linux.svg");
 }
 
 #graphql {
-	background-image: url("../public/media/graphql.png");
+	background-image: url("../public/media/graphql.svg");
 }
 
 #mysql {
-	background-image: url("../public/media/mysql.png");
+	background-image: url("../public/media/mysql.svg");
 }
 
 #git {
-	background-image: url("../public/media/git.png");
+	background-image: url("../public/media/git.svg");
 }
 
 #docker {
@@ -224,7 +234,7 @@ main {
 	background-image: url("../public/media/MongoDB.svg");
 }
 #postgres {
-	background-image: url("../public/media/postgres.png");
+	background-image: url("../public/media/postgresql.svg");
 }
 
 #springboot {
@@ -235,12 +245,14 @@ main {
 }
 
 #excel {
-	background-image: url("../public/media/excel.jpg");
+	background-image: url("../public/media/excel.svg");
 }
 #word {
-	background-image: url("../public/media/word.jpg");
+	background-image: url("../public/media/word.svg");
 }
-
+#powerpoint{
+	background-image: url("../public/media/powerpoint.svg");
+}
 #projects-contents {
 	display: grid;
 	max-width: 1200px;
@@ -286,16 +298,16 @@ main {
 }
 
 .project-summary {
-	font-weight: bold;
-	color: getColor(text);
+	font-size: 1em;
+	color: getColor(card-text);
 	font-size: medium;
 	margin-left: auto;
 	margin-top: 0.5em;
 }
 
 .project-title {
-	font-size: 1.2rem;
-	font-weight: 600;
+	font-size: 1.5em;
+	font-weight: 700;
 	margin-right: auto;
 	word-wrap: normal;
 	a {

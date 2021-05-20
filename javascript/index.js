@@ -38,7 +38,10 @@ window.onload = function() {
 		let languageHTML = '';
 		let technologyHTML = '';
 		Languages.forEach(function(langObj) {
-			languageHTML += `<li class="skill-item"> ${langObj.lang}
+			languageHTML += `<li class="skill-item"> 
+			<span class="language">
+			${langObj.lang}
+			</span>
 			<div>
 			<div class="skill-bar" style="width:${langObj.prof}"></div>
 		  </div> 
@@ -46,7 +49,7 @@ window.onload = function() {
 		});
 		Technologies.forEach(function(tech){
 			technologyHTML+=`
-			<img id="${tech}" class="skill-image"/>
+			<img border=0 id="${tech}" class="skill-image"/>
 			`;
 		});
 
@@ -56,7 +59,7 @@ window.onload = function() {
 		 <ul>
 			${languageHTML}
 		 </ul>
-		 <h3>I have worked with the following frameworks and technologies: </h3>
+		 <h3> Technological Stack </h3>
 		 <div id="framework-grid">
 			${technologyHTML}
 			</div>
@@ -83,7 +86,7 @@ window.onload = function() {
 			projectHTML+=`
 			<div class="project-card">
 
-			<video autoplay loop muted playsinline width="80%" height="80%" >
+			<video autoplay loop muted playsinline width="100%" height="80%" >
 			<source src="${project.vid}" type="video/mp4">
 			</video>
 

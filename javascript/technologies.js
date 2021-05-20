@@ -18,7 +18,8 @@ const Technologies = [
 	'springboot',
 	'android',
 	'excel',
-	'word'
+	'word',
+	'powerpoint'
 ];
 
 export default Technologies;
