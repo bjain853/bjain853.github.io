@@ -93,6 +93,7 @@ body {
 main {
 	width: 70%;
 	padding-top: 5rem;
+	overflow-wrap: normal;
 	h1 {
 		color: getColor(user);
 		margin-bottom: 1rem;
@@ -100,13 +101,6 @@ main {
 	}
 	h2 {
 		color: getColor(secondary-text);
-	}
-	.main-content {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		margin: 0;
 	}
 }
 
@@ -316,23 +310,25 @@ main {
 	
 		.image-slider {
 			width: 100%;
-			display: flex;
-			overflow-x: scroll;
 			max-height: 350px;
-			-webkit-overflow-scrolling: touch;
-			overflow: scroll;
-			scroll-snap-type: mandatory;
-
-			.image-slide {
+			ul{
+				list-style-type: none;
+				padding: 0;
+				display: flex;
+				overflow-x: scroll;
+				overflow-y: hidden;
+			}
+			li{
 				flex-shrink: 0;
 				width: 100%;
-				margin: 3px;
-				scroll-behavior: smooth;
-				scroll-snap-align: start;
+				max-height: 350px;
+			}
+			.image-slide {
 				img {
 					height: 100%;
 					width: 100%;
 				}
+
 			}
 		}
 		
@@ -345,14 +341,13 @@ main {
 			overflow: scroll;
 		
 			.project-title {
-				
-				font-weight: 700;
-				margin-right: auto;
-				word-wrap: normal;
-				text-decoration: none;
 				a{
 					color:getColor(card-title);
 					font-size: 1.5rem;
+					text-decoration: none;
+					font-weight: 700;
+					margin-right: auto;
+					word-wrap: normal;
 				}
 			}
 
@@ -372,6 +367,7 @@ main {
 				ul {
 					list-style: none;
 					margin-top: 0;
+					margin-left: 0;
 				}
 				span {
 					color: getColor(text);
