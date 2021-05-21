@@ -12,7 +12,7 @@ window.onload = function() {
 	const contact = document.querySelector('#contact');
 	const home = document.querySelector('#home');
 
-	const mainContent = document.querySelector('#content');
+	const mainContent = document.querySelector('#main-content');
 
 	
 
@@ -71,7 +71,7 @@ window.onload = function() {
 	resume.addEventListener('click', function() {
 		TypeString('Resume');
 		mainContent.innerHTML=`
-			<iframe src="../public/files/Resume.pdf"  loading="lazy" width="100%" style="height: 100vh;" />
+			<iframe src="../public/files/Resume.pdf"  loading="lazy" width="110%" style="height: 100vh;" />
 		`
 	});
 
@@ -81,16 +81,30 @@ window.onload = function() {
 
 		Projects.forEach(function(project){
 			let techStackHTML = "";
+			let projectImages='';
 			project.techStack.forEach(function(tech){
-				techStackHTML +=` ${tech} `;
+				techStackHTML +=` 
+				<li>
+				${tech} 
+				</li>
+				`;
+			});
+
+			project.images.forEach(function(image,idx){
+				projectImages+=`
+					<div class="image-slide" id="slide-${idx}" alt="No Image Available">
+						<img  src="${image}" height=60% width=60%  />
+					</div>
+				`;
 			});
 
 			projectHTML+=`
-			<div class="project-card">
 
-			<video autoplay loop muted playsinline width="100%" height="80%" >
-			<source src="${project.vid}" type="video/mp4">
-			</video>
+			<div class="project-slide">
+
+			<div class="image-slider">
+				${projectImages}
+			</div>
 
 			<div class="project-detail-container">
 				<span class="project-title">
@@ -101,15 +115,18 @@ window.onload = function() {
 			  <span class="project-summary">
 				${project.summary}
 			  </span>
-			  <span class="tech-stack">
+			  <div class="tech-stack-project">
+			  <span> Tech stack learnt </span>
+			  <ul>
 				${techStackHTML}
-			</span>
+			</ul>
+			</div>
 			</div>  
 			</div>
 			`;
 		});
 		mainContent.innerHTML=
-		`<div id="projects-contents">
+		`<div id="project-slider">
 			${projectHTML}
 			</div>
 		`;
