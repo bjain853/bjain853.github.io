@@ -1,21 +1,23 @@
 const Projects =[
     {
         name:"Proflix",
-        summary:"A streaming platform built for ease of use and user privacy",
+        summary:"Envisioned and developed a video streaming platform for content sourced by the user, complete with authentication and with support of up to 5 profiles per user comparable to Netflix",
         link:"https://github.com/bjain853/Proflix",
         images:["../public/media/proflix_1.png","../public/media/proflix_2.png","../public/media/proflix_3.png","../public/media/proflix_4.png"],
         techStack:["NextJS","NodeJS","ExpressJS","Material-UI","MySQL","Redis","JSON Web Tokens"]
     },
     {
         name:"Code Collab",
-        summary:"A collaborative cloud-based code editor capable of real time editing and sharing",
+        summary:`Built a cloud-based code editor, which supports multiple programming languages (HTML, CSS, JavaScript)
+        real-time code editing and rendering of the result aimed at making code collaboration easier. Unique feature includes an image to code convertor which employs Machine Learning algorithms to convert
+        an image of code snippet to actual code.`,
         images:["../public/media/codecollab_1.png","../public/media/codecollab_2.png","../public/media/codecollab_3.png","../public/media/codecollab_4.png","../public/media/codecollab_5.png","../public/media/codecollab_6.png","../public/media/codecollab_7.png"],
         link:"https://github.com/bjain853/codecollab",
         techStack:["ReactJS","NodeJS","GraphQL","Express","TessaractJS","Tailwind CSS"]
     },
     {
         name:"Web Gallery",
-        summary:"A secure image respository where users can see other user's posts and comment on those too",
+        summary:"Created a secure image repository which focuses on providing an intuitive User Experience along with a space for users to share and comment on other users’ posts",
         images:[],
         link:"https://github.com/bjain853/webgallery",
         techStack:["HTML","Javascript (ES6)","CSS3","NodeJS","Clam Scan Anti-virus"]
@@ -29,7 +31,7 @@ const Projects =[
     },
     {
         name:"UImpactify MVP",
-        summary:"A MVP for an Ed-tech UImpactify",
+        summary:"A beautiful online course management system built for an Ed-Tech, UImpactify",
         link:"https://github.com/bjain853/UImpactify",
         images:["../public/media/UImpactify_1.png","../public/media/UImpactify_2.png","../public/media/UImpactify_3.png","../public/media/UImpactify_4.png","../public/media/UImpactify_5.png","../public/media/UImpactify_6.png"],
         techStack:["GatsbyJS","MongoDB","NodeJS","ExpressJS","Material UI"]

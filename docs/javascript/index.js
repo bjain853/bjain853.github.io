@@ -92,9 +92,11 @@ window.onload = function() {
 
 			project.images.forEach(function(image,idx){
 				projectImages+=`
+				<li>
 					<div class="image-slide" id="slide-${idx}" alt="No Image Available">
 						<img  src="${image}" height=60% width=60%  />
 					</div>
+				</li>
 				`;
 			});
 
@@ -103,12 +105,14 @@ window.onload = function() {
 			<div class="project-slide">
 
 			<div class="image-slider">
+			<ul>
 				${projectImages}
+			</ul>
 			</div>
 
 			<div class="project-detail-container">
 				<span class="project-title">
-				<a href="${project.link}">
+				<a href="${project.link}" target="_blank">
 				${project.name}
 				</a>
 				  </span>
