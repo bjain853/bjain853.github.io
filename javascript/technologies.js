@@ -22,4 +22,14 @@ const Technologies = [
 	'powerpoint'
 ];
 
-export default Technologies;
+function renderTechnologies(){
+	let technologyHTML ='';
+	Technologies.forEach(function(tech){
+		technologyHTML+=`
+		<img border=0 loading="lazy" id="${tech}" class="skill-image"/>
+		`;
+	});
+	return technologyHTML;
+}
+
+export default renderTechnologies;
