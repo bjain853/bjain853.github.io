@@ -7,8 +7,9 @@
 
 $colors-dark: (
 	base:#002b36,
-	card-base:#6b96a7,
+	card-base:#4e6a75,
 	card-text:white,
+	card-title:#20dbd2,
 	text:#839496,
 	secondary-text:#b9c7c7,
 	user:#6c71c4,
@@ -20,8 +21,9 @@ $colors-dark: (
 
 $colors: (
 	base:#fdf6e3,
-	card-base:#d8d8c1af,
+	card-base:#eeeeeaaf,
 	card-text:black,
+	card-title:#20dbd2,
 	text:#657b83,
 	user:#6c71c4,
 	secondary-text:#72716e,
@@ -54,20 +56,23 @@ $font-stack: 'Fira Code', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
 	@return var(--color-#{$color-name});
 }
 
-
-footer{
+footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	height: 2.5rem;  
+	height: 2.5rem;
 }
 
 nav {
-	position:absolute;
-	top:0;
+	position: absolute;
+	top: 0;
 	width: 70%;
 	ul {
 		display: flex;
+		@media only screen and (max-width: 868px) {
+			overflow-x: scroll;
+			margin-bottom: 3rem;
+		}
 		align-items: center;
 		justify-content: space-around;
 		list-style-type: none;
@@ -76,7 +81,6 @@ nav {
 			cursor: pointer;
 		}
 	}
-
 }
 
 body {
@@ -87,7 +91,7 @@ body {
 }
 
 main {
-	width: 60%;
+	width: 70%;
 	padding-top: 5rem;
 	h1 {
 		color: getColor(user);
@@ -100,19 +104,22 @@ main {
 	.main-content {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
 	}
 }
 
 .container {
 	max-width: 900px;
+	min-height: 100vh;
 	margin: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	min-height: 100vh;
-	padding-bottom: 2.5rem;  
+	padding-bottom: 2.5rem;
 }
 
 //underline code from
@@ -165,9 +172,8 @@ main {
 }
 
 .skill-item {
-	.language{
+	.language {
 		font-weight: 600;
-
 	}
 	.skill-bar {
 		height: 24px;
@@ -178,18 +184,15 @@ main {
 
 #framework-grid {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 	/* This will result on two rows, each one of 300px */
 	grid-template-rows: 100px 100px 100px;
 
-	@media only screen and (max-width:768px) {
+	@media only screen and (max-width: 868px) {
 		grid-template-columns: 1fr 1fr 1fr 1fr;
-	/* This will result on two rows, each one of 300px */
-	grid-template-rows: 100px 100px 100px 100px;	
+		/* This will result on two rows, each one of 300px */
+		grid-template-rows: 100px 100px 100px 100px;
 	}
-
-	row-gap: 0.1rem;
-	column-gap:0.5rem;
 }
 .skill-image {
 	background-size: contain;
@@ -197,10 +200,23 @@ main {
 	background-position: center;
 	height: 80px;
 	width: 80px;
-	border:0; 
-	text-decoration:none; 
-	outline:none;
+	border: 0;
+	text-decoration: none;
+	outline: none;
 }
+
+.tech-stack {
+	font-size: 2rem;
+	font-weight: 800;
+	color: getColor(secondary-text);
+	text-decoration: underline;
+	margin-top: 1rem;
+	word-break: break-all;
+	margin-right: auto;
+	margin-bottom: 1em;
+}
+
+//tech stack images
 
 #react {
 	background-image: url("../public/media/react.svg");
@@ -275,73 +291,96 @@ main {
 	background-image: url("../public/media/word.svg");
 }
 
-#powerpoint{
+#powerpoint {
 	background-image: url("../public/media/powerpoint.svg");
 }
 
-#projects-contents {
-	display: grid;
-	width: 100%;
-	margin: 0 auto;
-	display: grid;
-	grid-gap: 1rem;
-	@media (min-width: 600px) {
-		.cards {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-	@media (min-width: 900px) {
-		.cards {
-			grid-template-columns: repeat(3, 1fr);
-		}
-	}
-	margin-bottom: 25px;
-}
 
-.project-card {
-	padding: 1rem;
-	display: flex;
-	height: 200px;
-	background-color: getColor(card-base);
-	width:90%;
-	@media only screen and (max-width:768px) {
-		flex-direction: column;
-	}
-}
 
-.project-detail-container {
+// sliders code inspired from https://css-tricks.com/can-get-pretty-far-making-slider-just-html-css/
+
+#project-slider {
+	width: 110%;
+	height: 40%;
 	display: flex;
 	flex-direction: column;
-	padding: 2%;
-	overflow: scroll;
-}
 
-.tech-stack {
-	font-size: 2rem;
-	font-weight: 800;
-	text-decoration: underline;
-	margin-top: 1rem;
-	word-break: break-all;
-	margin-right: auto;
-	margin-bottom: 1em;
-}
+	.project-slide {
+		width: 100%;
+		flex-shrink: 0;
+		height: 125%;
+		background-color: getColor(card-base);
+		color: getColor(card-text);
+		margin: 5px;
+		padding: 1.5rem;
+	
+		.image-slider {
+			width: 100%;
+			display: flex;
+			overflow-x: scroll;
+			max-height: 350px;
+			-webkit-overflow-scrolling: touch;
+			overflow: scroll;
+			scroll-snap-type: mandatory;
 
-.project-summary {
-	font-size: 1em;
-	color: getColor(card-text);
-	font-size: medium;
-	margin-left: auto;
-	margin-top: 0.5em;
-}
+			.image-slide {
+				flex-shrink: 0;
+				width: 100%;
+				margin: 3px;
+				scroll-behavior: smooth;
+				scroll-snap-align: start;
+				img {
+					height: 100%;
+					width: 100%;
+				}
+			}
+		}
+		
+		
 
-.project-title {
-	font-size: 1.5em;
-	font-weight: 700;
-	margin-right: auto;
-	word-wrap: normal;
-	a {
-		text-decoration: none;
-		color: getColor(links);
+		.project-detail-container {
+			display: flex;
+			flex-direction: column;
+			padding: 2%;
+			overflow: scroll;
+		
+			.project-title {
+				
+				font-weight: 700;
+				margin-right: auto;
+				word-wrap: normal;
+				text-decoration: none;
+				a{
+					color:getColor(card-title);
+					font-size: 1.5rem;
+				}
+			}
+
+			.project-summary {
+				font-size: 1em;
+				color: getColor(card-text);
+				font-size: medium;
+				margin-top: 0.5em;
+				overflow: scroll;
+			}
+			
+			
+			.tech-stack-project {
+				margin-top: 10px;
+				font-weight: bold;
+	
+				ul {
+					list-style: none;
+					margin-top: 0;
+				}
+				span {
+					color: getColor(text);
+				}
+			}
+		}
+		
 	}
 }
+
+
 
