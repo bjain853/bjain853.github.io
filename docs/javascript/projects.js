@@ -18,13 +18,13 @@ const Projects =[
     {
         name:"Web Gallery",
         summary:"Created a secure image repository which focuses on providing an intuitive User Experience along with a space for users to share and comment on other users’ posts",
-        images:[],
+        images:["../public/media/webgallery_1.png","../public/media/webgallery_2.png","../public/media/webgallery_3.png","../public/media/webgallery_4.png"],
         link:"https://github.com/bjain853/webgallery",
         techStack:["HTML","Javascript (ES6)","CSS3","NodeJS","Clam Scan Anti-virus"]
     },
     {
         name:"Microblog",
-        summary:"A blog where people can comment and like and/or dislike other user's posts",
+        summary:"A simple blog page where people can post their thoughts while also being able to comment on and like and/or dislike other user's posts",
         images:["../public/media/microblog_1.png","../public/media/microblog_2.png","../public/media/microblog_3.png","../public/media/microblog_4.png"],
         link:"https://github.com/bjain853/microblog",
         techStack:["HTML","CSS3","JavaScript","NodeJS"]

@@ -278,7 +278,8 @@ main h2 {
 }
 #project-slider .project-slide {
   width: 100%;
-  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
   height: 125%;
   background-color: var(--color-card-base);
   color: var(--color-card-text);
@@ -287,19 +288,18 @@ main h2 {
 }
 #project-slider .project-slide .image-slider {
   width: 100%;
-  max-height: 350px;
 }
 #project-slider .project-slide .image-slider ul {
   list-style-type: none;
   padding: 0;
   display: flex;
   overflow-x: scroll;
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 #project-slider .project-slide .image-slider li {
   flex-shrink: 0;
   width: 100%;
-  max-height: 350px;
+  max-height: 20rem;
 }
 #project-slider .project-slide .image-slider .image-slide img {
   height: 100%;
@@ -310,6 +310,7 @@ main h2 {
   flex-direction: column;
   padding: 2%;
   overflow: scroll;
+  margin-top: 2rem;
 }
 #project-slider .project-slide .project-detail-container .project-title a {
   color: var(--color-card-title);
