@@ -94,13 +94,20 @@ main {
 	width: 70%;
 	padding-top: 5rem;
 	overflow-wrap: normal;
+	p{
+		font-weight: 300;
+		font-size: 1.2rem;
+	}
 	h1 {
 		color: getColor(user);
 		margin-bottom: 1rem;
 		word-spacing: -2px;
+		font-size: 2.5rem;
+		
 	}
 	h2 {
 		color: getColor(secondary-text);
+		font-size: 2rem;
 	}
 }
 
