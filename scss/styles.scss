@@ -10,6 +10,7 @@ $colors-dark: (
 	card-base:#4e6a75,
 	card-text:white,
 	card-title:#20dbd2,
+	card-dots : darken(#20dbd2, 10%),
 	text:#839496,
 	secondary-text:#b9c7c7,
 	user:#6c71c4,
@@ -23,7 +24,8 @@ $colors: (
 	base:#fdf6e3,
 	card-base:#eeeeeaaf,
 	card-text:black,
-	card-title:#20dbd2,
+	card-title:#3178b3,
+	card-dots : darken(#3178b3,10%),
 	text:#657b83,
 	user:#6c71c4,
 	secondary-text:#72716e,
@@ -385,6 +387,9 @@ main {
 			}
 		}
 		
+	}
+	.glider-dot.active{
+	background: getColor(card-dots);
 	}
 }
 
