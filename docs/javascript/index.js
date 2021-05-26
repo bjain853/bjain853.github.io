@@ -64,13 +64,12 @@ window.onload = function() {
 			${projectHTML}
 			</div>
 		`;
-		document.querySelectorAll('.glider').forEach(elem=>{
+		const dots = document.querySelectorAll('.dots');
+		document.querySelectorAll('.glider').forEach((elem,idx)=>{
+			const dot = dots[idx];
 			new Glider(elem,{
-				slidesToShow:1.05,
-				slidesToScroll:1,
 				scrollLock:true,
-				rewind:true,
-				draggable:true
+				dots:dot
 			});
 		});
 	
