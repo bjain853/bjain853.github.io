@@ -9,4 +9,19 @@ const Languages = [
     { lang: 'HTML5', prof: '90%' }
 ];
 
-export default Languages;
+function renderLangauges(){
+    let languageHTML = '';
+    Languages.forEach(function(langObj) {
+        languageHTML += `<li class="skill-item"> 
+        <span class="language">
+        ${langObj.lang}
+        </span>
+        <div>
+        <div class="skill-bar" style="width:${langObj.prof}"></div>
+      </div> 
+        </li>`;
+    });
+    return languageHTML;
+}
+
+export default renderLangauges;

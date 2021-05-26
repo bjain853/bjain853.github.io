@@ -1,5 +1,6 @@
 {
   "imports": {
+    "glider-js": "./glider-js.js",
     "typewriter-effect/dist/core": "./typewriter-effect/dist/core.js"
   }
 }

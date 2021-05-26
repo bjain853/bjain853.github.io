@@ -1,3 +1,4 @@
+
 const Projects =[
     {
         name:"Proflix",
@@ -38,4 +39,68 @@ const Projects =[
     },
 ];
 
-export default Projects;
+function renderProjects(){
+    let projectHTML = '';
+    Projects.forEach(function(project,idx){
+        projectHTML+=`
+        <div class="project-slide">
+            <div class="images-slider">
+            ${renderProjectImages(project.images,idx)}
+            </div>
+            <div class="project-detail-container">
+                <span class="project-title">
+                    <a href="${project.link}" target="_blank">
+                         ${project.name}
+                    </a>
+                </span>
+                <span class="project-summary">
+                    ${project.summary}
+                </span>
+                ${renderTechStack(project.techStack)}
+            </div>  
+        </div>
+        `;
+
+    });
+    return projectHTML;
+}
+
+function renderTechStack(technologies){
+    let techStackHTML = "";
+    technologies.forEach(function(tech){
+        techStackHTML +=` 
+        <li>
+            ${tech} 
+        </li>
+        `;
+    });
+    return `<div class="tech-stack-project">
+               <span> Tech stack learnt </span>
+                <ul>
+                 ${techStackHTML}
+                </ul>
+            </div>
+    `;
+};
+
+
+function renderProjectImages(images){
+    
+
+    let projectImages = '';
+    images.forEach(function(image,idx){
+        projectImages+=`
+        <div id="slide-${idx}">
+                <img  src="${image}" alt="No Image Available"  />
+        </div>
+        `;
+    });
+
+    return ` 
+    <div class="glider">
+         ${projectImages}
+    </div>`;
+};
+
+
+export default renderProjects;
