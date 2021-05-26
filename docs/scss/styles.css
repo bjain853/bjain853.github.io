@@ -6,7 +6,8 @@
   --color-base: #fdf6e3;
   --color-card-base: #eeeeeaaf;
   --color-card-text: black;
-  --color-card-title: #20dbd2;
+  --color-card-title: #3178b3;
+  --color-card-dots: #265d8b;
   --color-text: #657b83;
   --color-user: #6c71c4;
   --color-secondary-text: #72716e;
@@ -23,6 +24,7 @@
     --color-card-base: #4e6a75;
     --color-card-text: white;
     --color-card-title: #20dbd2;
+    --color-card-dots: #19afa7;
     --color-text: #839496;
     --color-secondary-text: #b9c7c7;
     --color-user: #6c71c4;
@@ -345,4 +347,7 @@ main h2 {
 }
 #project-slider .project-slide .project-detail-container .tech-stack-project span {
   color: var(--color-text);
+}
+#project-slider .glider-dot.active {
+  background: var(--color-card-dots);
 }
