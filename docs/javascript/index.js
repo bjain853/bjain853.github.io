@@ -105,7 +105,7 @@ window.onload = function() {
 				<li>
 				<div id="phone">
 				<h3>Phone  </h3>
-				<span> <a href="tel:437-981-0687">(437) 981-0687> </a> </span>
+				<span> <a href="tel:437-981-0687"> +1 (437) 981-0687 </a> </span>
 				</div>
 				</li>
 			</ul>
