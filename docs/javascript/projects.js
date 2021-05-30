@@ -14,11 +14,11 @@ const Projects =[
         an image of code snippet to actual code.`,
         images:[{src:"../public/media/codecollab_1.png",ratio:"1.9335"},{src:"../public/media/codecollab_2.png",ratio:"1.9538"},{src:"../public/media/codecollab_3.png",ratio:"1.9538"},{src:"../public/media/codecollab_4.png",ratio:"1.9365"},{src:"../public/media/codecollab.gif",ratio:"1.7778"}],
         link:"https://github.com/bjain853/codecollab",
-        techStack:["ReactJS","NodeJS","GraphQL","Express","TessaractJS","Tailwind CSS"]
+        techStack:["ReactJS","NodeJS","GraphQL","Express","TessaractJS","Tailwind CSS","Material-UI"]
     },
     {
         name:"Web Gallery",
-        summary:"Created a secure image repository which focuses on providing an intuitive User Experience along with a space for users to share and comment on other users’ posts",
+        summary:"Created a secure image repository which focuses on providing a space for users to share and comment on other users’ posts using an intuitive graphical user interface hosted and served by a secure and robust backend",
         images:[{src:"../public/media/webgallery_1.png",ratio:"2.0808"},{src:"../public/media/webgallery_2.png",ratio:"2.0796"},{src:"../public/media/webgallery_3.png",ratio:"1.6164"}],
         link:"https://github.com/bjain853/webgallery",
         techStack:["HTML","Javascript (ES6)","CSS3","NodeJS","Clam Scan Anti-virus"]
@@ -32,11 +32,18 @@ const Projects =[
     },
     {
         name:"UImpactify MVP",
-        summary:"A beautiful online course management system built for an Ed-Tech, UImpactify",
+        summary:"A beautiful online course management system built for an Ed-Tech, UImpactify. Worked in an AGILE environment to maximize product's developement efficiency",
         link:"https://github.com/bjain853/UImpactify",
         images:[{src:"../public/media/UImpactify_1.png",ratio:"1.9048"},{src:"../public/media/UImpactify_2.png",ratio:"1.9248"},{src:"../public/media/UImpactify_3.png",ratio:"1.9175"},{src:"../public/media/UImpactify_4.png",ratio:"1.9632"},{src:"../public/media/UImpactify_5.png",ratio:"2.5157"},{src:"../public/media/UImpactify_6.png",ratio:"1.9048"}],
-        techStack:["GatsbyJS","MongoDB","NodeJS","ExpressJS","Material UI"]
+        techStack:["GatsbyJS","MongoDB","NodeJS","ExpressJS","Material-UI"]
     },
+    {
+        name:"Portfolio Website",
+        summary:"An online portfolio to make it easier for recruiters to look at my experiences and projects",
+        link:"https://github.com/bjain853/bjain853.github.io",
+        techStack:["HTML5","JavaScript (ES6)","SASS","Github Actions"],
+        images:[]
+    }
 ];
 
 function renderProjects(){
