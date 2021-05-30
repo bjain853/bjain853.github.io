@@ -40,12 +40,24 @@ footer {
   bottom: 0;
   width: 100%;
   height: 2.5rem;
+  overflow-x: visible;
+}
+
+body {
+  font-family: "Fira Code", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: var(--color-base);
+  color: var(--color-text);
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav {
   position: absolute;
   top: 0;
-  width: 70%;
+  width: 90%;
+  overflow-x: scroll;
 }
 nav ul {
   display: flex;
@@ -55,8 +67,7 @@ nav ul {
 }
 @media only screen and (max-width: 868px) {
   nav ul {
-    overflow-x: scroll;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
   }
 }
 nav ul li {
@@ -64,17 +75,9 @@ nav ul li {
   cursor: pointer;
 }
 
-body {
-  font-family: "Fira Code", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  background-color: var(--color-base);
-  color: var(--color-text);
-  line-height: 1.5;
-}
-
 main {
-  width: 70%;
+  width: 80%;
   padding-top: 5rem;
-  overflow-wrap: normal;
 }
 main p {
   font-weight: 300;
@@ -92,15 +95,10 @@ main h2 {
 }
 
 .container {
-  max-width: 900px;
   min-height: 100vh;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   position: relative;
   padding-bottom: 2.5rem;
+  width: 60%;
 }
 
 .underline:hover {
@@ -279,10 +277,11 @@ main h2 {
 }
 
 #project-slider {
-  width: 110%;
+  width: 100%;
   height: 40%;
   display: flex;
   flex-direction: column;
+  margin: 4rem;
 }
 #project-slider .project-slide {
   width: 100%;
