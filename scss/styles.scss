@@ -80,7 +80,7 @@ nav {
 	position: absolute;
 	top: 0;
 	width: 90%;
-	overflow-x: scroll;
+	overflow-x: auto;
 	ul {
 		display: flex;
 		align-items: center;
@@ -328,7 +328,7 @@ main {
 				list-style-type: none;
 				padding: 0;
 				display: flex;
-				overflow-x: scroll;
+				overflow-x: auto;
 				overflow-y: scroll;
 			}
 			li{
@@ -371,13 +371,14 @@ main {
 				color: getColor(card-text);
 				font-size: medium;
 				margin-top: 0.5em;
-				overflow: scroll;
+				overflow: auto;
 			}
 			
 			
 			.tech-stack-project {
 				margin-top: 10px;
 				font-weight: bold;
+				overflow: auto;
 	
 				ul {
 					list-style: none;
