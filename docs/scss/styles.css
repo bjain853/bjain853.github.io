@@ -57,7 +57,7 @@ nav {
   position: absolute;
   top: 0;
   width: 90%;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 nav ul {
   display: flex;
@@ -300,7 +300,7 @@ main h2 {
   list-style-type: none;
   padding: 0;
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: scroll;
 }
 #project-slider .project-slide .image-slider li {
@@ -333,11 +333,12 @@ main h2 {
   color: var(--color-card-text);
   font-size: medium;
   margin-top: 0.5em;
-  overflow: scroll;
+  overflow: auto;
 }
 #project-slider .project-slide .project-detail-container .tech-stack-project {
   margin-top: 10px;
   font-weight: bold;
+  overflow: auto;
 }
 #project-slider .project-slide .project-detail-container .tech-stack-project ul {
   list-style: none;
