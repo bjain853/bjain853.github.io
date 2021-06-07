@@ -1,42 +1,20 @@
+@use './main.module.scss' as *;
+@use './nav.module.scss' as * ;
+@use './constants.scss' as *;
+
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap');
 
+
 // prefers-color-scheme code from https://www.youtube.com/watch?v=OMaw2VYVZs4&list=TLPQMjAwNTIwMjFNcfOCGmikIg&index=7
 
-$colors-dark: (
-	base:#002b36,
-	card-base:#4e6a75,
-	card-text:white,
-	card-title:#20dbd2,
-	card-dots : darken(#20dbd2, 10%),
-	text:#839496,
-	secondary-text:#b9c7c7,
-	user:#6c71c4,
-	cursorColor:#d33682,
-	skill-bar:#2aa198,
-	selected-text:#93a1a1,
-	links:#c04c44
-);
-
-$colors: (
-	base:#fdf6e3,
-	card-base:#eeeeeaaf,
-	card-text:black,
-	card-title:#3178b3,
-	card-dots : darken(#3178b3,10%),
-	text:#657b83,
-	user:#6c71c4,
-	secondary-text:#72716e,
-	cursorColor:#23918c,
-	skill-bar:#002b36,
-	selected-text:#586e75,
-	links:#005bbb
-);
-
-$font-stack: 'Fira Code', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
-	sans-serif;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 
 :root {
 	@each $name, $color in $colors {
@@ -54,8 +32,39 @@ $font-stack: 'Fira Code', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
 	}
 }
 
-@function getColor($color-name) {
-	@return var(--color-#{$color-name});
+body {
+	font-family: $font-stack;
+	background-color: getColor(base);
+	//center container
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+//change scrollbar
+body::-webkit-scrollbar {
+	width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+	background-color: getColor(base);
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: black;
+}
+
+.container {
+	min-height: 100vh;
+	position: relative;
+	padding-bottom: 2.5rem;
+	width: 60%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	color: getColor(text);
 }
 
 footer {
@@ -65,337 +74,3 @@ footer {
 	height: 2.5rem;
 	overflow-x: visible;
 }
-
-body {
-	font-family: $font-stack;
-	background-color: getColor(base);
-	color: getColor(text);
-	line-height: 1.5;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-nav {
-	position: absolute;
-	top: 0;
-	width: 90%;
-	overflow-x: auto;
-	ul {
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		list-style-type: none;
-
-		@media only screen and (max-width: 868px) {
-			margin-bottom: 5rem;
-		}
-		li {
-			margin: 1.5rem;
-			cursor: pointer;
-		}
-	}
-}
-
-
-
-main {
-	width: 80%;
-	padding-top: 5rem;
-	p{
-		font-weight: 300;
-		font-size: 1.2rem;
-	}
-	h1 {
-		color: getColor(user);
-		margin-bottom: 1rem;
-		word-spacing: -2px;
-		font-size: 2.5rem;
-		
-	}
-	h2 {
-		color: getColor(secondary-text);
-		font-size: 2rem;
-	}
-}
-
-.container {
-	min-height: 100vh;
-	position: relative;
-	padding-bottom: 2.5rem;
-	width: 60%;
-
-}
-
-//underline code from
-// https://tiffanywhite.dev/2019/12/02/a-simple-terminal-website-with-css-and-typewriterjs/
-
-.underline:hover {
-	color: getColor(selected-text);
-}
-
-.underline {
-	position: relative;
-}
-
-.underline::before {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 2px;
-	background-color: getColor(selected-text);
-	transform-origin: bottom right;
-	transform: scaleX(0);
-	transition: transform 0.5s ease;
-}
-
-.underline:hover::before {
-	transform-origin: bottom left;
-	transform: scaleX(1);
-}
-
-#page-title {
-	color: getColor(cursorColor);
-}
-
-#contact-info {
-	li {
-		list-style: none;
-		margin-bottom: 20px;
-		font-size: large;
-		div {
-			display: flex;
-			flex-direction: column;
-		}
-	}
-	a {
-		text-decoration: none;
-		color: getColor(links);
-	}
-}
-
-.skill-item {
-	.language {
-		font-weight: 600;
-	}
-	.skill-bar {
-		height: 24px;
-		background-color: getColor(skill-bar);
-	}
-	margin-bottom: 20px;
-}
-
-#framework-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-	/* This will result on two rows, each one of 300px */
-	grid-template-rows: 100px 100px 100px;
-
-	@media only screen and (max-width: 868px) {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		/* This will result on two rows, each one of 300px */
-		grid-template-rows: 100px 100px 100px 100px;
-	}
-}
-.skill-image {
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 80px;
-	width: 80px;
-	border: 0;
-	text-decoration: none;
-	outline: none;
-}
-
-.tech-stack {
-	font-size: 2rem;
-	font-weight: 800;
-	color: getColor(secondary-text);
-	text-decoration: underline;
-	margin-top: 1rem;
-	word-break: break-all;
-	margin-right: auto;
-	margin-bottom: 1em;
-}
-
-//tech stack images
-
-#react {
-	background-image: url("../public/media/react.svg");
-}
-
-#nextjs {
-	background-image: url("../public/media/nextjs.svg");
-}
-#gatsby {
-	background-image: url("../public/media/gatsby.svg");
-}
-#nodejs {
-	background-image: url("../public/media/nodejs.svg");
-}
-
-#numpy {
-	background-image: url("../public/media/numpy.png");
-}
-#material-ui {
-	background-image: url("../public/media/material-ui.svg");
-}
-
-#bootstrap {
-	background-image: url("../public/media/bootstrap.svg");
-}
-#express {
-	background-image: url("../public/media/expressjs.jpg");
-}
-
-#linux {
-	background-image: url("../public/media/linux.svg");
-}
-
-#graphql {
-	background-image: url("../public/media/graphql.svg");
-}
-
-#mysql {
-	background-image: url("../public/media/mysql.svg");
-}
-
-#git {
-	background-image: url("../public/media/git.svg");
-}
-
-#docker {
-	background-image: url("../public/media/docker.svg");
-}
-
-#rest {
-	background-image: url("../public/media/rest.png");
-}
-
-#mongodb {
-	background-image: url("../public/media/MongoDB.svg");
-}
-#postgres {
-	background-image: url("../public/media/postgresql.svg");
-}
-
-#springboot {
-	background-image: url("../public/media/springboot.png");
-}
-#android {
-	background-image: url("../public/media/android.png");
-}
-
-#excel {
-	background-image: url("../public/media/excel.svg");
-}
-#word {
-	background-image: url("../public/media/word.svg");
-}
-
-#powerpoint {
-	background-image: url("../public/media/powerpoint.svg");
-}
-
-
-
-// sliders code inspired from https://css-tricks.com/can-get-pretty-far-making-slider-just-html-css/
-
-#project-slider {
-	width: 100%;
-	height: 40%;
-	display: flex;
-	flex-direction: column;
-	margin: 4rem;
-
-	.project-slide {
-		width: 100%;
-		display: flex;
-		flex-direction:column;
-		height: 125%;
-		background-color: getColor(card-base);
-		color: getColor(card-text);
-		margin: 5px;
-		padding: 1.5rem;
-	
-		.image-slider {
-			width: 100%;
-			
-			ul{
-				list-style-type: none;
-				padding: 0;
-				display: flex;
-				overflow-x: auto;
-				overflow-y: scroll;
-			}
-			li{
-				flex-shrink: 0;
-				width: 100%;
-				max-height: 30rem;
-				margin: 3px;
-			}
-			.image-slide {
-				img {
-					height: 100%;
-					width: 100%;
-				}
-
-			}
-		}
-		
-		
-
-		.project-detail-container {
-			display: flex;
-			flex-direction: column;
-			padding: 2%;
-			overflow: scroll;
-			margin-top: 2rem;
-			.project-title {
-				a{
-					color:getColor(card-title);
-					font-size: 1.5rem;
-					text-decoration: none;
-					font-weight: 700;
-					margin-right: auto;
-					word-wrap: normal;
-					
-				}
-			}
-
-			.project-summary {
-				font-size: 1em;
-				color: getColor(card-text);
-				font-size: medium;
-				margin-top: 0.5em;
-				overflow: auto;
-			}
-			
-			
-			.tech-stack-project {
-				margin-top: 10px;
-				font-weight: bold;
-				overflow: auto;
-	
-				ul {
-					list-style: none;
-					margin-top: 0;
-					margin-left: 0;
-				}
-				span {
-					color: getColor(text);
-				}
-			}
-		}
-		
-	}
-	.glider-dot.active{
-	background: getColor(card-dots);
-	}
-}
-
-
-
