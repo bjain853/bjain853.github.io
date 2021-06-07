@@ -1,0 +1,62 @@
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+nav #_navbar-btns_1ucdw_1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+}
+nav #_navbar-btns_1ucdw_1 li {
+  margin: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text);
+  font-size: 1.25rem;
+  display: block;
+}
+nav #_navbar-btns_1ucdw_1 li a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+nav #_burger_1ucdw_1 {
+  display: none;
+}
+nav #_burger_1ucdw_1 span {
+  font-size: 3rem;
+}
+
+._underline_1ucdw_33:hover {
+  color: var(--color-selected-text);
+}
+
+._underline_1ucdw_33 {
+  position: relative;
+}
+
+._underline_1ucdw_33::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-selected-text);
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+._underline_1ucdw_33:hover::before {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+#_page-title_1ucdw_1 {
+  color: var(--color-cursorColor);
+  margin-left: auto;
+}

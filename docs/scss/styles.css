@@ -2,82 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap");
-:root {
-  --color-base: #fdf6e3;
-  --color-card-base: #eeeeeaaf;
-  --color-card-text: black;
-  --color-card-title: #3178b3;
-  --color-card-dots: #265d8b;
-  --color-text: #657b83;
-  --color-user: #6c71c4;
-  --color-secondary-text: #72716e;
-  --color-cursorColor: #23918c;
-  --color-skill-bar: #002b36;
-  --color-selected-text: #586e75;
-  --color-links: #005bbb;
-  --theme: "light";
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-base: #002b36;
-    --color-card-base: #4e6a75;
-    --color-card-text: white;
-    --color-card-title: #20dbd2;
-    --color-card-dots: #19afa7;
-    --color-text: #839496;
-    --color-secondary-text: #b9c7c7;
-    --color-user: #6c71c4;
-    --color-cursorColor: #d33682;
-    --color-skill-bar: #2aa198;
-    --color-selected-text: #93a1a1;
-    --color-links: #c04c44;
-    --theme: "dark";
-  }
-}
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-  overflow-x: visible;
-}
-
-body {
-  font-family: "Fira Code", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  background-color: var(--color-base);
-  color: var(--color-text);
-  line-height: 1.5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-nav {
-  position: absolute;
-  top: 0;
-  width: 90%;
-  overflow-x: auto;
-}
-nav ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  list-style-type: none;
-}
-@media only screen and (max-width: 868px) {
-  nav ul {
-    margin-bottom: 5rem;
-  }
-}
-nav ul li {
-  margin: 1.5rem;
-  cursor: pointer;
-}
-
 main {
-  width: 80%;
+  width: 75%;
   padding-top: 5rem;
+}
+main #location {
+  color: var(--color-cursorColor);
 }
 main p {
   font-weight: 300;
@@ -87,48 +17,20 @@ main h1 {
   color: var(--color-user);
   margin-bottom: 1rem;
   word-spacing: -2px;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
 }
 main h2 {
   color: var(--color-secondary-text);
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
-
-.container {
-  min-height: 100vh;
-  position: relative;
-  padding-bottom: 2.5rem;
-  width: 60%;
+main h3 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
-
-.underline:hover {
-  color: var(--color-selected-text);
-}
-
-.underline {
-  position: relative;
-}
-
-.underline::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: var(--color-selected-text);
-  transform-origin: bottom right;
-  transform: scaleX(0);
-  transition: transform 0.5s ease;
-}
-
-.underline:hover::before {
-  transform-origin: bottom left;
-  transform: scaleX(1);
-}
-
-#page-title {
-  color: var(--color-cursorColor);
+main .language-list {
+  list-style-type: none;
 }
 
 #contact-info li {
@@ -281,7 +183,6 @@ main h2 {
   height: 40%;
   display: flex;
   flex-direction: column;
-  margin: 4rem;
 }
 #project-slider .project-slide {
   width: 100%;
@@ -350,4 +251,145 @@ main h2 {
 }
 #project-slider .glider-dot.active {
   background: var(--color-card-dots);
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+nav #navbar-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+}
+nav #navbar-btns li {
+  margin: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text);
+  font-size: 1.25rem;
+  display: block;
+}
+nav #navbar-btns li a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+nav #burger {
+  display: none;
+}
+nav #burger span {
+  font-size: 3rem;
+}
+
+.underline:hover {
+  color: var(--color-selected-text);
+}
+
+.underline {
+  position: relative;
+}
+
+.underline::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-selected-text);
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.underline:hover::before {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+#page-title {
+  color: var(--color-cursorColor);
+  margin-left: auto;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-base: #fdf6e3;
+  --color-card-base: #e2e2d1af;
+  --color-card-text: black;
+  --color-card-title: #3178b3;
+  --color-card-dots: #265d8b;
+  --color-text: #657b83;
+  --color-user: #6c71c4;
+  --color-secondary-text: #72716e;
+  --color-cursorColor: #23918c;
+  --color-skill-bar: #002b36;
+  --color-selected-text: #586e75;
+  --color-links: #005bbb;
+  --theme: "light";
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-base: #253546;
+    --color-card-base: #3f5b78;
+    --color-card-text: white;
+    --color-card-title: #1dafec;
+    --color-card-dots: #0d6e96;
+    --color-text: #feffff;
+    --color-secondary-text: #feffff;
+    --color-user: #3cc5aa;
+    --color-cursorColor: #c7c7c7;
+    --color-skill-bar: #c1ddff;
+    --color-selected-text: #c1ddff;
+    --color-links: #3c8ce2;
+    --theme: "dark";
+  }
+}
+body {
+  font-family: "Fira Code", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: var(--color-base);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--color-base);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+
+.container {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 2.5rem;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  overflow-x: visible;
 }

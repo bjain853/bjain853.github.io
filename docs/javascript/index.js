@@ -16,16 +16,15 @@ window.onload = function() {
 	const mainContent = document.querySelector('#main-content');
 
 	function TypeString(stringToType) {
-		const typewriter = new Typewriter('#page-title', {
+		const typewriter = new Typewriter('#location', {
 			cursor: '|',
 			loop: true
 		});
-
-		typewriter.typeString(stringToType).pauseFor(3000).deleteAll().start();
+		typewriter.typeString(stringToType).pauseFor(6000).deleteAll().start();
 	}
 
 	home.addEventListener('click', function() {
-		TypeString('Welcome');
+		TypeString('cd ~');
 		mainContent.innerHTML = `
 		<h2>Introduction</h2>
 		<p> 
@@ -34,12 +33,12 @@ window.onload = function() {
 	});
 
 	about.addEventListener('click', function() {
-		TypeString('About');
+		TypeString('cd ~/about');
 
 		mainContent.innerHTML = `
 		 <h2>Skills </h2>
 		 <h3> Programming Languages</h3>
-		 <ul>
+		 <ul class="language-list">
 			${renderLangauges()}
 		 </ul>
 		 <h3> Technological Stack </h3>
@@ -50,14 +49,14 @@ window.onload = function() {
 	});
 
 	resume.addEventListener('click', function() {
-		TypeString('Resume');
+		TypeString('cd ~/resume');
 		mainContent.innerHTML = `
 			<iframe src="../public/files/Resume.pdf"  loading="lazy" width="110%" style="height: 100vh;" />
 		`;
 	});
 
 	projects.addEventListener('click', function() {
-		TypeString('Projects');
+		TypeString('cd ~/projects');
 		const projectHTML = renderProjects();
 		mainContent.innerHTML = `
 		<div id="project-slider">
@@ -76,7 +75,7 @@ window.onload = function() {
 	});
 
 	contact.addEventListener('click', function() {
-		TypeString('Contact');
+		TypeString('cd ~/contact');
 
 		mainContent.innerHTML = `
 			<div id="contact-info">
@@ -113,5 +112,5 @@ window.onload = function() {
 	});
 
 	//default behaviour
-	TypeString('Welcome');
+	TypeString('cd ~');
 };
