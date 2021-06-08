@@ -81,17 +81,21 @@ main {
 }
 
 #framework-grid {
+
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: repeat(6,1fr);//1fr 1fr 1fr 1fr 1fr 1fr;
 	/* This will result on two rows, each one of 300px */
-	grid-template-rows: 100px 100px 100px;
+	grid-template-rows: repeat(3,100px);//100px 100px 100px;
+	column-gap: 0px;
+	row-gap: 0px;
 
 	@media only screen and (max-width: 868px) {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: repeat(4,1fr);//1fr 1fr 1fr 1fr;
 		/* This will result on two rows, each one of 300px */
-		grid-template-rows: 100px 100px 100px 100px;
+		grid-template-rows: repeat(4,100px);//100px 100px 100px 100px;
 	}
 }
+
 .skill-image {
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -100,7 +104,6 @@ main {
 	width: 80px;
 	border: 0;
 	text-decoration: none;
-	outline: none;
 }
 
 .tech-stack {

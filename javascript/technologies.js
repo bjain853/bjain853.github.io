@@ -26,7 +26,7 @@ function renderTechnologies(){
 	let technologyHTML ='';
 	Technologies.forEach(function(tech){
 		technologyHTML+=`
-		<img border=0 loading="lazy" id="${tech}" class="skill-image"/>
+		<div id="${tech}" class="skill-image"></div>
 		`;
 	});
 	return technologyHTML;

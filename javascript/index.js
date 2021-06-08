@@ -6,36 +6,38 @@ import Glider from 'glider-js';
 
 import '../scss/styles.scss';
 
-window.onload = function() {
-	const about = document.querySelector('#about');
-	const resume = document.querySelector('#resume');
-	const projects = document.querySelector('#projects');
-	const contact = document.querySelector('#contact');
-	const home = document.querySelector('#home');
+(function() {
+	'use strict';
+	window.onload = function() {
+		const about = document.querySelector('#about');
+		const resume = document.querySelector('#resume');
+		const projects = document.querySelector('#projects');
+		const contact = document.querySelector('#contact');
+		const home = document.querySelector('#home');
 
-	const mainContent = document.querySelector('#main-content');
+		const mainContent = document.querySelector('#main-content');
 
-	function TypeString(stringToType) {
-		const typewriter = new Typewriter('#location', {
-			cursor: '|',
-			loop: true
-		});
-		typewriter.typeString(stringToType).pauseFor(6000).deleteAll().start();
-	}
+		function TypeString(stringToType) {
+			const typewriter = new Typewriter('#location', {
+				cursor: '|',
+				loop: true
+			});
+			typewriter.typeString(stringToType).pauseFor(6000).deleteAll().start();
+		}
 
-	home.addEventListener('click', function() {
-		TypeString('cd ~');
-		mainContent.innerHTML = `
+		home.addEventListener('click', function() {
+			TypeString('cd ~');
+			mainContent.innerHTML = `
 		<h2>Introduction</h2>
 		<p> 
 			Hello! My name is Bhavya and I am a Toronto based Software Developer. I am currently pursuing a Bachelors in Computer Science from University of Toronto
 	   </p>`;
-	});
+		});
 
-	about.addEventListener('click', function() {
-		TypeString('cd ~/about');
+		about.addEventListener('click', function() {
+			TypeString('cd ~/about');
 
-		mainContent.innerHTML = `
+			mainContent.innerHTML = `
 		 <h2>Skills </h2>
 		 <h3> Programming Languages</h3>
 		 <ul class="language-list">
@@ -46,38 +48,37 @@ window.onload = function() {
 			${renderTechnologies()}
 			</div>
 		`;
-	});
+		});
 
-	resume.addEventListener('click', function() {
-		TypeString('cd ~/resume');
-		mainContent.innerHTML = `
+		resume.addEventListener('click', function() {
+			TypeString('cd ~/resume');
+			mainContent.innerHTML = `
 			<iframe src="../public/files/Resume.pdf"  loading="lazy" width="110%" style="height: 100vh;" />
 		`;
-	});
+		});
 
-	projects.addEventListener('click', function() {
-		TypeString('cd ~/projects');
-		const projectHTML = renderProjects();
-		mainContent.innerHTML = `
+		projects.addEventListener('click', function() {
+			TypeString('cd ~/projects');
+			const projectHTML = renderProjects();
+			mainContent.innerHTML = `
 		<div id="project-slider">
 			${projectHTML}
 			</div>
 		`;
-		const dots = document.querySelectorAll('.dots');
-		document.querySelectorAll('.glider').forEach((elem,idx)=>{
-			const dot = dots[idx];
-			new Glider(elem,{
-				scrollLock:true,
-				dots:dot
+			const dots = document.querySelectorAll('.dots');
+			document.querySelectorAll('.glider').forEach((elem, idx) => {
+				const dot = dots[idx];
+				new Glider(elem, {
+					scrollLock: true,
+					dots: dot
+				});
 			});
 		});
-	
-	});
 
-	contact.addEventListener('click', function() {
-		TypeString('cd ~/contact');
+		contact.addEventListener('click', function() {
+			TypeString('cd ~/contact');
 
-		mainContent.innerHTML = `
+			mainContent.innerHTML = `
 			<div id="contact-info">
 			<h2> Feel free to reach me at </h2>
 			<ul>
@@ -109,8 +110,9 @@ window.onload = function() {
 				</li>
 			</ul>
 			</div>`;
-	});
+		});
 
-	//default behaviour
-	TypeString('cd ~');
-};
+		//default behaviour
+		TypeString('cd ~');
+	};
+})();
