@@ -179,6 +179,10 @@ main .language-list {
   background-image: url("../public/media/powerpoint.svg");
 }
 
+#flask {
+  background-image: url("../public/media/flask.png");
+}
+
 #project-slider {
   width: 100%;
   height: 40%;
