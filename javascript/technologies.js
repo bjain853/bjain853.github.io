@@ -19,7 +19,8 @@ const Technologies = [
 	'android',
 	'excel',
 	'word',
-	'powerpoint'
+	'powerpoint',
+	'flask'
 ];
 
 function renderTechnologies(){
