@@ -1,26 +1,39 @@
 {
-  "name": "personal_website",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "portfolio-v2",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "snowpack dev",
-    "build": "snowpack build"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@snowpack/plugin-sass": "^1.4.0",
-    "@snowpack/plugin-webpack": "^2.3.1",
-    "snowpack": "^3.4.0"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@splidejs/splide": "^2.4.21",
-    "glider-js": "^1.7.7",
-    "typewriter-effect": "^2.17.0",
-    "typewriter-js": "^2.0.0",
-    "winbox": "^0.1.92"
+    "@chakra-ui/react": "^2.8.0",
+    "@emailjs/browser": "^3.11.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "flubber": "^0.4.2",
+    "framer-motion": "^10.16.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scroll": "^1.8.9"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-scroll": "^1.8.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.15",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "postcss": "^8.4.28",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
   }
 }

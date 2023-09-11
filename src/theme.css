@@ -1,0 +1,129 @@
+:root {
+  --bg-color: rgba(207,236,224, 1);
+  --text-color: rgba(43,114,92, 1);
+  --text-soft-color: rgba(51,131,106, 1);
+  --text-strong-color: rgba(29,83,67, 1);
+  --subtle-color: rgba(218,240,231, 1);
+  --border-color: rgba(102,203,170, 1);
+  --shadow-color: rgba(94,187,156, 1);
+  --input-color: rgba(255,255,255, 1);
+  --outline-color: rgba(232,167,179, 1);
+  --mark-color: rgba(189,44,89, 0.08);
+  --special-color: rgba(189,44,89, 1);
+  --special-bg-color: rgba(217,52,104, 1);
+  --special-text-color: rgba(255,255,255, 1);
+  --special-shadow-color: rgba(103,68,75, 1);
+  --special-mark-color: rgba(255,255,255, 0.08);
+  --light-color: rgba(253,241,243, 1);
+  --dark-color: rgba(94,62,68, 1);
+  --text-color-rgb: 43,114,92;
+  --bg-color-rgb: 207,236,224;
+  --subtle-color-rgb: 218,240,231;
+  --special-color-rgb: 189,44,89;
+  --special-text-color-rgb: 255,255,255;
+  --special-bg-color-rgb: 217,52,104;
+  --shadow-color-rgb: 94,187,156;
+  --special-shadow-color-rgb: 103,68,75;
+  --outline-color-rgb: 232,167,179;
+  --dark-color-rgb: 94,62,68;
+  --light-color-rgb: 253,241,243;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: rgba(22,52,42, 1);
+    --text-color: rgba(67,167,136, 1);
+    --text-soft-color: rgba(60,151,123, 1);
+    --text-strong-color: rgba(85,208,170, 1);
+    --subtle-color: rgba(19,48,38, 1);
+    --border-color: rgba(40,87,72, 1);
+    --shadow-color: rgba(0,0,0, 1);
+    --input-color: rgba(32,32,32, 1);
+    --outline-color: rgba(220,134,152, 1);
+    --mark-color: rgba(223,117,141, 0.08);
+    --special-color: rgba(223,117,141, 1);
+    --special-bg-color: rgba(168,61,89, 1);
+    --special-text-color: rgba(228,221,222, 1);
+    --special-shadow-color: rgba(43,26,29, 1);
+    --special-mark-color: rgba(228,221,222, 0.08);
+    --light-color: rgba(240,203,209, 1);
+    --dark-color: rgba(70,46,51, 1);
+    --text-color-rgb: 67,167,136;
+    --bg-color-rgb: 22,52,42;
+    --subtle-color-rgb: 19,48,38;
+    --special-color-rgb: 223,117,141;
+    --special-text-color-rgb: 228,221,222;
+    --special-bg-color-rgb: 168,61,89;
+    --shadow-color-rgb: 0,0,0;
+    --special-shadow-color-rgb: 43,26,29;
+    --outline-color-rgb: 220,134,152;
+    --dark-color-rgb: 70,46,51;
+    --light-color-rgb: 240,203,209;
+  }
+}
+
+@media (prefers-color-scheme: light) and (prefers-contrast: more) {
+  :root {
+    --bg-color: rgba(207,236,224, 1);
+    --text-color: rgba(29,83,67, 1);
+    --text-soft-color: rgba(29,83,67, 1);
+    --text-strong-color: rgba(29,83,67, 1);
+    --subtle-color: rgba(218,240,231, 1);
+    --border-color: rgba(66,135,112, 1);
+    --shadow-color: rgba(75,152,127, 1);
+    --input-color: rgba(255,255,255, 1);
+    --outline-color: rgba(228,144,161, 1);
+    --mark-color: rgba(140,30,64, 0.16);
+    --special-color: rgba(140,30,64, 1);
+    --special-bg-color: rgba(165,37,77, 1);
+    --special-text-color: rgba(255,255,255, 1);
+    --special-shadow-color: rgba(22,11,13, 1);
+    --special-mark-color: rgba(255,255,255, 0.16);
+    --light-color: rgba(253,241,243, 1);
+    --dark-color: rgba(94,62,68, 1);
+    --text-color-rgb: 29,83,67;
+    --bg-color-rgb: 207,236,224;
+    --subtle-color-rgb: 218,240,231;
+    --special-color-rgb: 140,30,64;
+    --special-text-color-rgb: 255,255,255;
+    --special-bg-color-rgb: 165,37,77;
+    --shadow-color-rgb: 75,152,127;
+    --special-shadow-color-rgb: 22,11,13;
+    --outline-color-rgb: 228,144,161;
+    --dark-color-rgb: 94,62,68;
+    --light-color-rgb: 253,241,243;
+  }
+}
+
+@media (prefers-color-scheme: dark) and (prefers-contrast: more) {
+  :root {
+    --bg-color: rgba(22,52,42, 1);
+    --text-color: rgba(85,208,170, 1);
+    --text-soft-color: rgba(85,208,170, 1);
+    --text-strong-color: rgba(85,208,170, 1);
+    --subtle-color: rgba(19,48,38, 1);
+    --border-color: rgba(74,151,126, 1);
+    --shadow-color: rgba(0,0,0, 1);
+    --input-color: rgba(32,32,32, 1);
+    --outline-color: rgba(219,129,148, 1);
+    --mark-color: rgba(233,171,183, 0.16);
+    --special-color: rgba(233,171,183, 1);
+    --special-bg-color: rgba(137,48,72, 1);
+    --special-text-color: rgba(242,238,239, 1);
+    --special-shadow-color: rgba(0,0,0, 1);
+    --special-mark-color: rgba(242,238,239, 0.16);
+    --light-color: rgba(245,222,226, 1);
+    --dark-color: rgba(70,46,51, 1);
+    --text-color-rgb: 85,208,170;
+    --bg-color-rgb: 22,52,42;
+    --subtle-color-rgb: 19,48,38;
+    --special-color-rgb: 233,171,183;
+    --special-text-color-rgb: 242,238,239;
+    --special-bg-color-rgb: 137,48,72;
+    --shadow-color-rgb: 0,0,0;
+    --special-shadow-color-rgb: 0,0,0;
+    --outline-color-rgb: 219,129,148;
+    --dark-color-rgb: 70,46,51;
+    --light-color-rgb: 245,222,226;
+  }
+}
